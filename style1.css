@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.body{
+    /* background: url("https://static.vecteezy.com/system/resources/previews/000/373/352/original/blackboard-with-snake-in-jungle-as-background-vector.jpg" );  */
+    background-image:url("bgimage.jpg");
+    min-height: 100vh;  
+    background-size: 100vh 100vw;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#board{
+    /* background:linear-gradient(rgb(207, 207, 56),rgb(65, 148, 65));   */
+    height: 50vmin;
+    width: 80vmin;
+    display: grid;
+    /* grid-template-rows:repeat(10,1fr) ;
+    grid-template-columns:repeat(10,1fr); */
+    border: solid #fff;
+     position: relative; 
+    right: 150px;
+    bottom: 25px;
+
+}
+
+
+#scoreBox{
+    position: absolute;
+    top: 120px;
+    right: 250px;
+    font-size: 39px;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'New Tegomin', serif;
+}
+
+#hiscoreBox{
+    position: absolute;
+    top: 90px;
+    right: 250px;
+    font-size: 39px;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
+}
+.food{
+    background: linear-gradient(red, purple);
+    border: .25vmin solid white;
+    border-radius: 8px;
+}
+
+.snake{
+    background-color: purple;
+    border: .25vmin solid white;
+    border-radius: 12px;
+}
+.head{
+    background: linear-gradient(rgb(240, 124, 124), rgb(228, 228, 129));
+    border: 2px solid rgb(34, 4, 34); 
+    transform: scale(1.02);
+    border-radius: 9px;
+}
