@@ -12,7 +12,7 @@ let highscoreval = 0;
 
 
 //board
-let blockSize = 25;
+let blockSize = 20;
 
 let rows = 20;
 let cols = 20;
@@ -38,8 +38,8 @@ let gameOver = false;
 
 window.onload = function() {
     board = document.getElementById("board");
-    board.height = rows * blockSize;
-    board.width = cols * blockSize;
+    board.height = rows* blockSize;
+    board.width =  cols* blockSize;
     context = board.getContext("2d"); //used for drawing on the board
 
     placeFood();
@@ -63,6 +63,11 @@ function update() {
         foodsound.play();
         snakeBody.push([foodX, foodY]);
         score += 1;
+        if(score>hiscoreval){
+            hiscoreval = score;
+            localStorage.setItem("hiscore", JSON.stringify(hiscoreval));
+            hiscoreBox.innerHTML = "HiScore: " + hiscoreval;
+        }
         
         scoreBox.innerHTML = "Score: " + score;
         placeFood();
@@ -84,7 +89,7 @@ function update() {
     }
 
     //game over conditions
-    if (snakeX < 0 || snakeX > cols*blockSize || snakeY < 0 || snakeY > rows*blockSize) {
+    if (snakeX < 0 || snakeX >= cols*blockSize || snakeY < 0 || snakeY >= rows*blockSize) {
         gameOver = true;
         gameoversound.play();
         alert("Game Over");
@@ -98,6 +103,16 @@ function update() {
             alert("Game Over");
         }
     }
+}
+
+let hiscore = localStorage.getItem("hiscore");
+if(hiscore === null){
+    hiscoreval = 0;
+    localStorage.setItem("hiscore", JSON.stringify(hiscoreval))
+}
+else{
+    hiscoreval = JSON.parse(hiscore);
+    hiscoreBox.innerHTML = "HiScore: " + hiscore;
 }
 
 function changeDirection(e) {
