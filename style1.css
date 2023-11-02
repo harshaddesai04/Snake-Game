@@ -65,3 +65,47 @@
     transform: scale(1.02);
     border-radius: 9px;
 }
+/* Media query for tablets and smaller screens */
+@media (max-width: 992px) {
+    body {
+        font-size: 14px;
+        background-size: cover;
+    }
+
+    #board {
+        height: 40vmin;
+        width: 70vmin;
+        right: 100px;
+        bottom: 20px;
+        /* adjust other styles as needed */
+    }
+
+    #scoreBox {
+        top: 100px;
+        right: 200px;
+        font-size: 30px;
+        /* adjust other styles as needed */
+    }
+
+    #hiscoreBox {
+        top: 70px;
+        right: 200px;
+        font-size: 30px;
+        /* adjust other styles as needed */
+    }
+}
+
+/* Media query for smartphones and smaller screens */
+@media (max-width: 768px) {
+    body {
+        font-size: 12px;
+        background-size: cover;
+    }
+
+    #board {
+        height: 30vmin;
+        width: 60vmin;
+        right: 50px;
+        bottom: 15px;
+        /* adjust other styles as needed */
+    }
